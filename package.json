@@ -17,6 +17,8 @@
         "test": "./node_modules/buster/bin/buster-test"
     },
     "devDependencies": {
-        "buster": "*"
+        "buster": "*",
+        "buster-lint": "*",
+        "buster-coverage": "*"
     }
 }
