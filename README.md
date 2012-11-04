@@ -1,4 +1,4 @@
-# huddle - Pack and compress css and javascript files from your html file #
+# huddle - Pack and compress css and javascript #
 
 [![Build status](https://secure.travis-ci.org/robgietema/huddle.png?branch=master)](http://travis-ci.org/robgietema/huddle/)
 
