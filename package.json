@@ -8,8 +8,15 @@
         "name": "Rob Gietema",
         "email": "rob.gietema@gmail.com"
     }],
+    "main": "./lib/huddle",
     "repository": {
         "type": "git",
         "url": "https://github.com/robgietema/huddle.git"
+    },
+    "scripts": {
+        "test": "./node_modules/buster/bin/buster-test"
+    },
+    "devDependencies": {
+        "buster": "*"
     }
 }
