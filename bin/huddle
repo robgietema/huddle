@@ -1,22 +1,23 @@
 #!/usr/bin/env node
 
-var optimist = require("optimist"),
-    huddle = require("../lib/huddle").huddle,
+var optimist = require('optimist'),
+    fs = require('fs'),
+    huddle = require('../lib/huddle').huddle,
     argv = optimist
-        .usage("Pack and compress css and javascript.\nUsage: $0")
-        .options("i", {
-            alias: "input",
-            describe: "The input html file",
-            default: "index.html"
+        .usage('Pack and compress css and javascript.\nUsage: $0')
+        .options('i', {
+            alias: 'input',
+            describe: 'The input html file',
+            default: 'index.html'
         })
-        .options("o", {
-            alias: "output",
-            describe: "The output html file",
-            default: "index-min.html"
+        .options('o', {
+            alias: 'output',
+            describe: 'The output html file',
+            default: 'index-min.html'
         })
-        .options("h", {
-            alias: "help",
-            describe: "Show this message"
+        .options('h', {
+            alias: 'help',
+            describe: 'Show this message'
         })
         .argv;
 
@@ -24,5 +25,13 @@ if (argv.h) {
     optimist.showHelp();
     process.exit(1);
 }
+
+fs.exists(argv.i, function (exists) {
+    if (!exists) {
+        optimist.showHelp();
+        console.log('Input file not found');
+        process.exit(1);
+    }
+});
 
 huddle(argv.i, argv.o);
