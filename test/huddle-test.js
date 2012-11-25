@@ -87,6 +87,25 @@ buster.testCase('huddle', {
         refute(resources.getStylesheets()['app']);
     },
 
+    "Script tag": function () {
+        resources.read('<script type="text/javascript" src="a.js"></script>');
+        assert.equals(resources.write(), '<script type="text/javascript" src="app.js"></script>');
+        assert.equals(resources.getScripts()['app']['a.js'], 'text/javascript');
+    },
+
+    "Multiple script tags with modules": function () {
+        resources.read('<script type="text/javascript" src="a.js"></script><script type="text/javascript" src="b.js" data-module="mylib"></script>');
+        assert.equals(resources.write(), '<script type="text/javascript" src="app.js"></script><script type="text/javascript" src="mylib.js"></script>');
+        assert.equals(resources.getScripts()['app']['a.js'], 'text/javascript');
+        assert.equals(resources.getScripts()['mylib']['b.js'], 'text/javascript');
+    },
+
+    "Drop script tag": function () {
+        resources.read('<script type="text/javascript" src="a.js" data-drop=""/>');
+        assert.equals(resources.write(), '');
+        refute(resources.getScripts()['app']);
+    },
+
 
 
 });
