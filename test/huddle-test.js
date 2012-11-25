@@ -57,14 +57,29 @@ buster.testCase('huddle', {
     "Stylesheet link tag": function () {
         resources.read('<link href="a.css" rel="stylesheet" type="text/css"/>');
         assert.equals(resources.write(), '<link href="app.css" rel="stylesheet" type="text/css"/>');
-        assert.equals(resources.getStylesheets()['app.css']['a.css'], 'text/css');
+        assert.equals(resources.getStylesheets()['app']['a.css'], 'text/css');
     },
 
     "Multiple stylesheet link tags": function () {
         resources.read('<link href="a.css" rel="stylesheet" type="text/css"/><link href="b.less" rel="stylesheet" type="text/less"/>');
         assert.equals(resources.write(), '<link href="app.css" rel="stylesheet" type="text/css"/>');
-        assert.equals(resources.getStylesheets()['app.css']['a.css'], 'text/css');
-        assert.equals(resources.getStylesheets()['app.css']['b.less'], 'text/less');
+        assert.equals(resources.getStylesheets()['app']['a.css'], 'text/css');
+        assert.equals(resources.getStylesheets()['app']['b.less'], 'text/less');
     },
+
+    "Stylesheet with module": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-module="mymod"/>');
+        assert.equals(resources.write(), '<link href="mymod.css" rel="stylesheet" type="text/css"/>');
+        assert.equals(resources.getStylesheets()['mymod']['a.css'], 'text/css');
+        refute(resources.getStylesheets()['app']);
+    },
+
+    "Multiple stylesheet link tags with modules": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-module="mylib"/><link href="b.less" rel="stylesheet" type="text/less"/>');
+        assert.equals(resources.write(), '<link href="mylib.css" rel="stylesheet" type="text/css"/><link href="app.css" rel="stylesheet" type="text/css"/>');
+        assert.equals(resources.getStylesheets()['mylib']['a.css'], 'text/css');
+        assert.equals(resources.getStylesheets()['app']['b.less'], 'text/less');
+    },
+
 
 });
