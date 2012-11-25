@@ -13,6 +13,16 @@ buster.testCase('huddle', {
         assert.equals(resources.write(), '');
     },
 
+    "Doctype should be preserved": function () {
+        resources.read('<!DOCTYPE html>');
+        assert.equals(resources.write(), '<!DOCTYPE html>');
+    },
+
+    "Multi line doctype": function () {
+        resources.read('<!DOCTYPE html line1\nline2>');
+        assert.equals(resources.write(), '<!DOCTYPE html line1\nline2>');
+    },
+
     "Singleton tag": function () {
         resources.read('<div/>');
         assert.equals(resources.write(), '<div/>');
@@ -39,4 +49,15 @@ buster.testCase('huddle', {
         assert.equals(resources.write(), '<div>Test</div>');
     },
 
+    "Tag with attributes": function () {
+        resources.read('<div a1="v1" a2="v2"/>');
+        assert.equals(resources.write(), '<div a1="v1" a2="v2"/>');
+    },
+/*
+    "Css link tag": function () {
+        resources.read('<div>Test</div>');
+        assert.equals(resources.write(), '<div>Test</div>');
+    },
+    <link href="../dependencies/bootstrap.css" rel="stylesheet" type="text/css"/>
+*/
 });
