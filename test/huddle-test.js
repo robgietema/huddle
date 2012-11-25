@@ -53,11 +53,18 @@ buster.testCase('huddle', {
         resources.read('<div a1="v1" a2="v2"/>');
         assert.equals(resources.write(), '<div a1="v1" a2="v2"/>');
     },
-/*
-    "Css link tag": function () {
-        resources.read('<div>Test</div>');
-        assert.equals(resources.write(), '<div>Test</div>');
+
+    "Stylesheet link tag": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css"/>');
+        assert.equals(resources.write(), '<link href="app.css" rel="stylesheet" type="text/css"/>');
+        assert.equals(resources.getStylesheets()['app.css']['a.css'], 'text/css');
     },
-    <link href="../dependencies/bootstrap.css" rel="stylesheet" type="text/css"/>
-*/
+
+    "Multiple stylesheet link tags": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css"/><link href="b.less" rel="stylesheet" type="text/less"/>');
+        assert.equals(resources.write(), '<link href="app.css" rel="stylesheet" type="text/css"/>');
+        assert.equals(resources.getStylesheets()['app.css']['a.css'], 'text/css');
+        assert.equals(resources.getStylesheets()['app.css']['b.less'], 'text/less');
+    },
+
 });
