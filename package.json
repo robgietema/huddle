@@ -1,6 +1,6 @@
 {
     "name": "huddle",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Pack and compress css and javascript from your html file",
     "homepage": "http://github.com/robgietema/huddle",
     "author": "Rob Gietema",

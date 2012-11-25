@@ -2,7 +2,8 @@
 
 var optimist = require('optimist'),
     fs = require('fs'),
-    huddle = require('../lib/huddle').huddle,
+    huddle = require('../lib/huddle'),
+    resources,
     argv = optimist
         .usage('Pack and compress css and javascript.\nUsage: $0')
         .options('i', {
@@ -34,4 +35,6 @@ fs.exists(argv.i, function (exists) {
     }
 });
 
-huddle(argv.i, argv.o);
+resources = new huddle.Huddle();
+resources.readFromFile(argv.i);
+console.log(resources.write());

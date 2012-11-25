@@ -1,10 +1,15 @@
 /*global assert: false, refute: false */
-var buster = require("buster");
-
-var huddle = require("../lib/huddle.js");
+var buster = require("buster"),
+    huddle = require("../lib/huddle.js"),
+    resources;
 
 buster.testCase('huddle', {
-    "dummy test": function () {
-        assert(true);
+    setUp: function () {
+        resources = new huddle.Huddle();
+    },
+
+    "Empty input": function () {
+        resources.read('');
+        assert.equals(resources.write(), '');
     }
 });
