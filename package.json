@@ -22,7 +22,8 @@
         "htmlparser": "*",
         "xtend": "*",
         "uglify-js": "*",
-        "clean-css": "*"
+        "clean-css": "*",
+        "less": "*"
     },
     "devDependencies": {
         "buster": "*",

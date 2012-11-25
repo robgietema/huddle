@@ -61,7 +61,7 @@ buster.testCase('Huddle', {
     },
 
     "Multiple stylesheet link tags": function () {
-        resources.read('<link href="a.css" rel="stylesheet" type="text/css"/><link href="b.less" rel="stylesheet" type="text/less"/>');
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css"/><link href="b.less" rel="stylesheet/less" type="text/css"/>');
         assert.equals(resources.write(), '<link href="app.css" rel="stylesheet" type="text/css"/>');
         assert.equals(resources.getStylesheets()['app']['a.css'], 'text/css');
         assert.equals(resources.getStylesheets()['app']['b.less'], 'text/less');
@@ -75,7 +75,7 @@ buster.testCase('Huddle', {
     },
 
     "Multiple stylesheet link tags with modules": function () {
-        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-module="mylib"/><link href="b.less" rel="stylesheet" type="text/less"/>');
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-module="mylib"/><link href="b.less" rel="stylesheet/less" type="text/css"/>');
         assert.equals(resources.write(), '<link href="mylib.css" rel="stylesheet" type="text/css"/><link href="app.css" rel="stylesheet" type="text/css"/>');
         assert.equals(resources.getStylesheets()['mylib']['a.css'], 'text/css');
         assert.equals(resources.getStylesheets()['app']['b.less'], 'text/less');
