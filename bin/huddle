@@ -37,4 +37,6 @@ fs.exists(argv.i, function (exists) {
 
 resources = new huddle.Huddle();
 resources.readFromFile(argv.i);
-console.log(resources.write());
+resources.writeToFile(argv.o);
+resources.writeScripts();
+resources.writeStylesheets();

@@ -20,7 +20,9 @@
         "optimist": "*",
         "parserlib": "*",
         "htmlparser": "*",
-        "xtend": "*"
+        "xtend": "*",
+        "uglify-js": "*",
+        "clean-css": "*"
     },
     "devDependencies": {
         "buster": "*",

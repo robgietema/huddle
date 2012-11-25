@@ -3,7 +3,7 @@ var buster = require("buster"),
     huddle = require("../lib/huddle.js"),
     resources;
 
-buster.testCase('huddle', {
+buster.testCase('Huddle', {
     setUp: function () {
         resources = new huddle.Huddle();
     },
