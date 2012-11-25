@@ -18,6 +18,17 @@ buster.testCase('huddle', {
         assert.equals(resources.write(), '<div/>');
     },
 
+    "Strip whitespace": function () {
+        resources.read('  <div/>');
+        assert.equals(resources.write(), '<div/>');
+    },
+
+    "Preserve whitespace": function () {
+        resources = new huddle.Huddle({ignoreWhitespace: false});
+        resources.read('  <div/>');
+        assert.equals(resources.write(), '  <div/>');
+    },
+
     "Open/Close tag without body": function () {
         resources.read('<div></div>');
         assert.equals(resources.write(), '<div/>');

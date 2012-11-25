@@ -19,7 +19,8 @@
     "dependencies": {
         "optimist": "*",
         "parserlib": "*",
-        "htmlparser": "*"
+        "htmlparser": "*",
+        "xtend": "*"
     },
     "devDependencies": {
         "buster": "*",
