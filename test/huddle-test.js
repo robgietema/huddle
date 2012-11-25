@@ -11,5 +11,21 @@ buster.testCase('huddle', {
     "Empty input": function () {
         resources.read('');
         assert.equals(resources.write(), '');
-    }
+    },
+
+    "Singleton tag": function () {
+        resources.read('<div/>');
+        assert.equals(resources.write(), '<div/>');
+    },
+
+    "Open/Close tag without body": function () {
+        resources.read('<div></div>');
+        assert.equals(resources.write(), '<div/>');
+    },
+
+    "Open/Close tag with body": function () {
+        resources.read('<div>Test</div>');
+        assert.equals(resources.write(), '<div>Test</div>');
+    },
+
 });
