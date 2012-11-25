@@ -87,6 +87,12 @@ buster.testCase('huddle', {
         refute(resources.getStylesheets()['app']);
     },
 
+    "Include remote stylesheet": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-remote="b.css"/>');
+        assert.equals(resources.write(), '<link href="b.css" rel="stylesheet" type="text/css"/>');
+        refute(resources.getStylesheets()['app']);
+    },
+
     "Script tag": function () {
         resources.read('<script type="text/javascript" src="a.js"></script>');
         assert.equals(resources.write(), '<script type="text/javascript" src="app.js"></script>');
@@ -106,6 +112,9 @@ buster.testCase('huddle', {
         refute(resources.getScripts()['app']);
     },
 
-
-
+    "Include remote scripts": function () {
+        resources.read('<script type="text/javascript" src="a.js" data-remote="b.js"/>');
+        assert.equals(resources.write(), '<script type="text/javascript" src="b.js"></script>');
+        refute(resources.getScripts()['app']);
+    }
 });
