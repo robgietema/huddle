@@ -81,5 +81,12 @@ buster.testCase('huddle', {
         assert.equals(resources.getStylesheets()['app']['b.less'], 'text/less');
     },
 
+    "Drop stylesheet link tag": function () {
+        resources.read('<link href="a.css" rel="stylesheet" type="text/css" data-drop=""/>');
+        assert.equals(resources.write(), '');
+        refute(resources.getStylesheets()['app']);
+    },
+
+
 
 });
