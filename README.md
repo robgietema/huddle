@@ -53,9 +53,8 @@ since it will be converted to CSS.
 When you want to use local files for development but want to use remote files
 in production you can use the `data-remote` attribute. This will allow you to
 use a CDN for example in your production environment.
-Set a remote file to be included and not merged/compressed
 
-<script data-remote="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript" src="jquery.js"></script>
+    <script data-remote="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript" src="jquery.js"></script>
 
 ## Obviel templates
 
