@@ -27,13 +27,11 @@ if (argv.h) {
     process.exit(1);
 }
 
-fs.exists(argv.i, function (exists) {
-    if (!exists) {
-        optimist.showHelp();
-        console.log('Input file not found');
-        process.exit(1);
-    }
-});
+if (!fs.existsSync(argv.i)) {
+    optimist.showHelp();
+    console.log('Input file not found');
+    process.exit(1);
+}
 
 resources = new huddle.Huddle();
 resources.readFromFile(argv.i);
