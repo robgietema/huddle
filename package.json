@@ -1,7 +1,8 @@
 {
     "name": "huddle",
     "version": "0.0.1",
-    "description": "Pack and compress css and javascript from your html file",
+    "description": "Pack and compress CSS and Javascript from an HTML file",
+    "keywords" : ["html", "stylesheet", "css", "javascript", "js", "compile", "compres", "pack", "optimize", "optimization"],
     "homepage": "http://github.com/robgietema/huddle",
     "author": "Rob Gietema",
     "contributors": [{
@@ -9,25 +10,32 @@
         "email": "rob.gietema@gmail.com"
     }],
     "main": "./lib/huddle",
+    "bin" : { "huddle" : "./bin/huddle" }, 
     "repository": {
         "type": "git",
         "url": "https://github.com/robgietema/huddle.git"
     },
+    "bugs" : "http://github.com/robgietema/huddle/issues",
     "scripts": {
         "test": "./node_modules/buster/bin/buster-test"
     },
     "dependencies": {
-        "optimist": "*",
-        "parserlib": "*",
-        "htmlparser": "*",
-        "xtend": "*",
-        "uglify-js": "*",
-        "clean-css": "*",
-        "less": "*"
+        "optimist": "~0.3.5",
+        "htmlparser": "~1.7.6",
+        "xtend": "~1.0.3",
+        "uglify-js": "~2.2.1",
+        "clean-css": "~0.8.2",
+        "less": "~1.3.1"
     },
     "devDependencies": {
-        "buster": "*",
-        "buster-lint": "*",
-        "buster-coverage": "*"
-    }
+        "buster": "~0.6.2",
+        "buster-lint": "~0.3.1",
+        "buster-coverage": "~0.1.0"
+    },
+    "licenses" : [
+        {
+            "type" : "GPLv3",
+            "url" : "http://www.gnu.org/licenses/gpl-3.0.html"
+        }
+    ]
 }

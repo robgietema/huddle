@@ -5,7 +5,7 @@ var optimist = require('optimist'),
     huddle = require('../lib/huddle'),
     resources,
     argv = optimist
-        .usage('Pack and compress css and javascript.\nUsage: $0')
+        .usage('Pack and compress CSS and Javascript.\nUsage: $0')
         .options('i', {
             alias: 'input',
             describe: 'The input html file',

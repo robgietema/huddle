@@ -1,8 +1,9 @@
-# huddle - Pack and compress css and javascript #
+# huddle - Pack and compress CSS and Javascript #
 
 [![Build status](https://secure.travis-ci.org/robgietema/huddle.png?branch=master)](http://travis-ci.org/robgietema/huddle/)
 
-**huddle** is a tool to retrieve css and javascript references from an html file and pack and compress those files.
+**huddle** is a tool to retrieve CSS and Javascript references from an HTML
+file and pack and compress those files.
 
 ## Usage
 
@@ -10,12 +11,12 @@
 
 Supported options:
 
-- `-i filename` or `--input` - Use `filename` as the input html file (default: index.html)
-- `-o filename` or `--output` - Use `filename` as the output html file (default: index-min.html)
+- `-i filename` or `--input` - Use `filename` as the input HTML file (default: index.html)
+- `-o filename` or `--output` - Use `filename` as the output HTML file (default: index-min.html)
 - `-h` or `--help` - Show help message
 
-Input should be an html document. All script and css tags should be parsed
-and the files from it merged and compressed. The output html should be stripped
+Input should be an HTML document. All script and css tags should be parsed
+and the files from it merged and compressed. The output HTML should be stripped
 from whitespace and contain the path to the merged and compressed files.
 
 ## Supported formats
