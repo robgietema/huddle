@@ -1,8 +1,8 @@
 {
     "name": "huddle",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Pack and compress CSS and Javascript from an HTML file",
-    "keywords" : ["html", "stylesheet", "css", "javascript", "js", "compile", "compres", "pack", "optimize", "optimization"],
+    "keywords" : ["html", "stylesheet", "css", "javascript", "js", "compile", "compress", "pack", "optimize", "optimization"],
     "homepage": "http://github.com/robgietema/huddle",
     "author": "Rob Gietema",
     "contributors": [{
