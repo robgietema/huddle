@@ -33,3 +33,14 @@ libs.js. If no module is specified it will default to app.js and app.css
 When javascript files contain jsonUrl or obvtUrl the parameter should be converted
 to json and obvt and the template should be rendered inline with all newlines and
 leading and trailing whitespace stripped.
+
+## Usage
+
+
+    huddle [ options... ]
+
+Supported options:
+
+- `-i filename` or `--input` --- use `filename` as the input html file (default: index.html)
+- `-o filename` or `--outpyt` --- use `filename` as the output html file (default: index-min.html)
+- `-h` or `--help` --- show help message
