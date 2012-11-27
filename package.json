@@ -10,7 +10,7 @@
         "email": "rob.gietema@gmail.com"
     }],
     "main": "./lib/huddle",
-    "bin" : { "huddle" : "./bin/huddle" }, 
+    "bin" : { "huddle" : "./bin/huddle" },
     "repository": {
         "type": "git",
         "url": "https://github.com/robgietema/huddle.git"
