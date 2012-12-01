@@ -60,6 +60,6 @@ use a CDN for example in your production environment.
 ## Obviel templates
 
 [Obviel](http://obviel.org) is a client-side web framework for jQuery. When
-using an Obviel view with `jsonUrl` or `obvtUrl` parameters they will be
-converted to `json` and `obvt` and the template will be rendered inline with
-all newlines and leading and trailing whitespace stripped.
+using an Obviel view with a `obvtUrl` parameter it will be converted to `obvt`
+and the template will be rendered inline with all newlines and leading and
+trailing whitespace stripped.
