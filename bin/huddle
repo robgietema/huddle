@@ -36,5 +36,5 @@ if (!fs.existsSync(argv.i)) {
 resources = new huddle.Huddle();
 resources.readFromFile(argv.i);
 resources.writeToFile(argv.o);
-resources.writeScripts();
-resources.writeStylesheets();
+resources.writeScripts(argv.o);
+resources.writeStylesheets(argv.o);
